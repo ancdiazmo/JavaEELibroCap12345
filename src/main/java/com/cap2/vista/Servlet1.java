@@ -20,6 +20,7 @@ import com.cap2.service.qualifiers.ServiceApplicationQualifier;
 import com.cap2.service.qualifiers.ServiceConversationQualifier;
 import com.cap2.service.qualifiers.ServiceRequestQualifier;
 import com.cap2.service.qualifiers.ServiceSessionQualifier;
+import com.cap3.validation.ValidacionDeBeans;
 
 public class Servlet1 extends HttpServlet {
 	
@@ -65,6 +66,10 @@ public class Servlet1 extends HttpServlet {
 		logger.info("Soy Request y mi ramdom es: " + serviceRequest.getMyRamdom());
 		
 		logger.info("Soy Session y mi ramdom es: " + serviceSession.getMyRamdom());
+		
+		ValidacionDeBeans validacion = new ValidacionDeBeans (null,null,null,null,null);
+		
+		logger.info(validacion.getAtributo1().toLowerCase());
 
 		request.getRequestDispatcher("/WEB-INF/cap2/vista/Servlet1.jsp").forward(request, response);
 	}
